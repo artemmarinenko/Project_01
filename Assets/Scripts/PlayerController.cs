@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{   [SerializeField]
+{  
+    [SerializeField]
     private int moveSpeed = 5;
+
     [SerializeField]
     private int rotateSpeed = 300;
-    private Animator anim;
+
+    private Animator animator;
+
     private Rigidbody rBody;
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody>();
     }
 
@@ -20,11 +24,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W)) {
-            anim.SetBool("isRunning", true);
+            animator.SetBool("isRunning", true);
         }
         else  
         {
-            anim.SetBool("isRunning", false); ;
+            animator.SetBool("isRunning", false); ;
         }
 
 
